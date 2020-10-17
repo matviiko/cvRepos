@@ -1,5 +1,5 @@
 .container {
-  padding: 1rem 3rem;
+  padding: 30px 3rem;
   border-top: 1px solid #e3e3e3;
 }
 
@@ -42,7 +42,6 @@
     margin-bottom: 20px;
 
     p {
-      opacity: 0.8;
       margin: 0;
     }
   }
@@ -63,7 +62,6 @@
       & + span {
         display: block;
         padding-left: 90px;
-        opacity: 0.8;
       }
     }
   }

@@ -1,3 +1,38 @@
 .skills {
-  
+  display: grid;
+  grid-template-columns: 33% 67%;
 }
+
+.box-title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+
+  &:after {
+    content: '.';
+    color: #3333ff;
+  }
+}
+
+.col-left {
+  padding: 0 15px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.col-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-gap: 1vh;
+  justify-items: center;
+}
+
+.skill__item {
+  display: flex;
+  flex-direction: column;
+}
+
