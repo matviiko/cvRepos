@@ -35,16 +35,16 @@ export const Hello: React.FC = () => {
                         <span className="title info__title">social</span>
                         <span >
                             <a className="icons" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/matviy.kopchak">
-                                <Icon path={mdiFacebook} size={0.7} color="#252525" />
+                                <Icon className="icons_item" path={mdiFacebook} size={0.7} />
                             </a>
                             <a className="icons" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/matviikoo/">
-                                <Icon path={mdiInstagram} size={0.7} color="#252525" />
+                                <Icon className="icons_item" path={mdiInstagram} size={0.7} />
                             </a>
                             <a className="icons" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/matvii-kopchak-99a0b2138/">
-                                <Icon path={mdiLinkedin} size={0.7} color="#252525" />
+                                <Icon className="icons_item" path={mdiLinkedin} size={0.7} />
                             </a>
                             <a className="icons" target="_blank" rel="noopener noreferrer" href="https://github.com/matviiko">
-                                <Icon path={mdiGithub} size={0.7} color="#252525" />
+                                <Icon className="icons_item" path={mdiGithub} size={0.7} />
                             </a>
                         </span>
                     </p>
