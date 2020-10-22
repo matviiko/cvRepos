@@ -2,3 +2,37 @@
   display: grid;
   grid-template-columns: 33% 67%;
 }
+
+.experience__item {
+  margin-left: 20px;
+  margin-bottom: 20px;
+
+  p {
+    opacity: 0.8;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.item__title{
+  float: left;
+  display: block;
+
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 700;
+
+  & + span {
+    display: block;
+    padding-left: 90px;
+    padding-bottom: 5px;
+  }
+}
+
+.item__date {
+  padding-bottom: 5px;
+}
