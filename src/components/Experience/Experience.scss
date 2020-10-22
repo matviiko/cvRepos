@@ -8,7 +8,6 @@
   margin-bottom: 20px;
 
   p {
-    opacity: 0.8;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -18,13 +17,14 @@
   }
 }
 
-.item__title{
+.item__title {
   float: left;
   display: block;
 
   font-size: 16px;
   line-height: 1.55;
   font-weight: 700;
+  margin-right: 10px;
 
   & + span {
     display: block;
