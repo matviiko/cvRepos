@@ -14,6 +14,7 @@ export const Portfolio: React.FC = () => {
         <PortfolioItem />
         <PortfolioItem />
         <PortfolioItem />
+        <PortfolioItem />
       </div>
     </div>
   );

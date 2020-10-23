@@ -4,3 +4,9 @@ export interface Experience {
     date: string;
     text: string
 }
+
+export interface IForm {
+    name: string;
+    email: string;
+    message: string
+}
