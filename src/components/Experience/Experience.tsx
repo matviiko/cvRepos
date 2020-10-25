@@ -4,7 +4,7 @@ import {ExperienceItem} from './ExperienceItem';
 
 export const Experience: React.FC = () => {
   return (
-    <div className="container experience">
+    <div id="Experience" className="container experience">
       <div className="col-left">
         <h2 className="box-title">Experience</h2>
         <p>

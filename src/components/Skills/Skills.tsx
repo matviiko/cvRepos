@@ -13,7 +13,7 @@ import {
 
 export const Skills: React.FC = () => {
     return (
-        <div className="container skills">
+        <div id="Skills" className="container skills">
             <div className="col-left">
                 <h2 className="box-title">Skills</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam esse fugiat, iste laborum laudantium, nam nobis nostrum, officia optio perspiciatis quia sequi soluta voluptatem!</p>

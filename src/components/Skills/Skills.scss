@@ -29,6 +29,10 @@
   grid-template-columns: 1fr 1fr 1fr 1fr ;
   grid-gap: 1vh;
   justify-items: center;
+
+  svg:hover {
+    background: #d1e9fa;
+  }
 }
 
 .skill__item {

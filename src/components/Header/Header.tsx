@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-scroll"
 import "./Header.scss"
 
 export interface IListItem {
@@ -29,9 +30,16 @@ export const Header: React.FC = () => {
             <ul>
                 {
                     navList.map((item, index) => {
-                        return (
+                      return (
                             <li key={index}>
-                                <a href="/">{item.label}</a>
+                                <Link
+                                  activeClass="active"
+                                  to={item.label}
+                                  spy={true}
+                                  smooth={true}
+                                  offset={-70}
+                                  duration={500}
+                                >{item.label}</Link>
                             </li>
                         )
                     })

@@ -10,7 +10,7 @@ export const Contact: React.FC = () => {
   }
 
   return (
-    <div className="container experience">
+    <div id="Contact me" className="container experience">
       <div className="col-left">
         <h2 className="box-title">Contact</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aspernatur beatae doloremque facere molestiae!</p>

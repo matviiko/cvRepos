@@ -8,7 +8,6 @@
   padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
-  z-index: 1;
   box-shadow: 1px 5px 5px rgba(182, 182, 184, 0.8)
 }
 
@@ -31,8 +30,14 @@ li {
   a {
     text-decoration: none;
     color: #252525;
+    cursor: pointer;
 
     &:hover {
+      text-decoration: underline;
+      color: var(--success-color);
+    }
+
+    &.active {
       text-decoration: underline;
       color: var(--success-color);
     }

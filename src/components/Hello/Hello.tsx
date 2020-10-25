@@ -6,7 +6,7 @@ import { mdiFacebook, mdiGithub, mdiInstagram, mdiLinkedin } from '@mdi/js';
 
 export const Hello: React.FC = () => {
   return (
-    <div className="container about">
+    <div id="Hello" className="container about">
       <div className="about__content">
         <div className="about__title">
           <h1>

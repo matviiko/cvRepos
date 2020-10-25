@@ -3,7 +3,7 @@ import { ExperienceItem } from '../Experience/ExperienceItem';
 
 export const Education: React.FC = () => {
   return (
-    <div className="container experience">
+    <div id="Education" className="container experience">
       <div className="col-left">
         <h2 className="box-title">Education</h2>
         <p>
