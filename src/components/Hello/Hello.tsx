@@ -3,36 +3,38 @@ import './Hello.scss';
 import logo from '../../image/business-man.jpg';
 import Icon from '@mdi/react';
 import { mdiFacebook, mdiGithub, mdiInstagram, mdiLinkedin } from '@mdi/js';
+import {IState} from "../../shared/interfaces";
 
-export const Hello: React.FC = () => {
+export interface IHelloProps {
+  userState: IState
+}
+
+export const Hello: React.FC<IHelloProps> = props => {
   return (
     <div id="Hello" className="container about">
       <div className="about__content">
         <div className="about__title">
           <h1>
-            <span>I am Matvii Kopchak</span>
+            <span>I am {props.userState.lastName + " " + props.userState.firstName}</span>
           </h1>
         </div>
         <div className="about__text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet,
-            assumenda cum deleniti eos expedita facilis inventore iste itaque
-            iusto magnam minus non possimus quidem quisquam reiciendis sed
-            voluptas voluptatibus!
+            {props.userState.text}
           </p>
         </div>
         <div className="about__info">
           <p>
             <span className="title info__title">phone</span>
-            <span>+380964960758</span>
+            <span>{props.userState.phone}</span>
           </p>
           <p>
             <span className="title info__title">email</span>
-            <span>matviy.kopchak@gmail.com</span>
+            <span>{props.userState.email}</span>
           </p>
           <p>
             <span className="title info__title">address</span>
-            <span>Ivano-Frankivsk Ukraine</span>
+            <span>{props.userState.address}</span>
           </p>
           <p>
             <span className="title info__title">social</span>
@@ -41,7 +43,7 @@ export const Hello: React.FC = () => {
                 className="icons"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.facebook.com/matviy.kopchak"
+                href={`https://${props.userState.social.facebook}`}
               >
                 <Icon className="icons_item" path={mdiFacebook} size={0.7} />
               </a>
@@ -49,7 +51,7 @@ export const Hello: React.FC = () => {
                 className="icons"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.instagram.com/matviikoo/"
+                href={`https://${props.userState.social.instagram}`}
               >
                 <Icon className="icons_item" path={mdiInstagram} size={0.7} />
               </a>
@@ -57,7 +59,7 @@ export const Hello: React.FC = () => {
                 className="icons"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/matvii-kopchak-99a0b2138/"
+                href={`https://${props.userState.social.linkedin}`}
               >
                 <Icon className="icons_item" path={mdiLinkedin} size={0.7} />
               </a>
@@ -65,7 +67,7 @@ export const Hello: React.FC = () => {
                 className="icons"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/matviiko"
+                href={`https://${props.userState.social.github}`}
               >
                 <Icon className="icons_item" path={mdiGithub} size={0.7} />
               </a>

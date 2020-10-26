@@ -1,18 +1,19 @@
 import React from 'react';
-import image from '../../image/website.jpg';
+import { IPortfolioItems } from '../../shared/interfaces';
 
 export interface IPortfolioItem {
+  item: IPortfolioItems
   onClick(): void;
 }
 
-export const PortfolioItem: React.FC<IPortfolioItem> = props => {
+export const PortfolioItem: React.FC<IPortfolioItem> = ({item, onClick}) => {
   return (
     <div
       className="portfolio__box"
-      onClick={props.onClick}
+      onClick={onClick}
     >
-      <img className="portfolio__img" src={image} alt={image}/>
-      <span className="portfolio__name">Web Title</span>
+      <img className="portfolio__img" src={item.url_img} alt={item.title}/>
+      <span className="portfolio__name">{item.title}</span>
     </div>
   );
 };
