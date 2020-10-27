@@ -22,7 +22,7 @@ export const Education: React.FC<IEducationProps> = ({education}) => {
               company={item.company}
               date={item.date}
               text={item.text}/>
-          })
+          }).reverse()
         }
       </div>
     </div>

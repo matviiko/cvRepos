@@ -11,9 +11,10 @@ import {Contact} from "./components/Contact/Contact";
 import {IState} from "./shared/interfaces";
 
 const App: React.FC = () => {
+  // eslint-disable-next-line
   const [userState, setUserState] = useState<IState>({
     firstName: 'Matvii',
-    text: 'Text for home',
+    text: 'Hello, my name is Matvii, I am 28, I am a Frontend developer, I like to create new and interesting apps. My goal is to become a high-level Frontend developer in this area. I would like to improve my skills in Angular and React JS . At the moment I work as a freelancer. I am looking for a reputable where I would get a chance to develop my skills through getting interesting and challenging tasks. I am a team player, thus I would love to join a team of the same-minded colleagues.',
     lastName: 'Kopchak',
     phone: '+380964960758',
     email: 'matviy.kopchak@gmail.com',
@@ -26,7 +27,7 @@ const App: React.FC = () => {
     },
     skills: {
       title: 'Skills',
-      text: 'Text about Skills',
+      text: 'In this part you can see what skills I have. Every day I try to develop and improve them.',
       skills: {
         html5: true,
         css3: true,
@@ -37,41 +38,42 @@ const App: React.FC = () => {
         angular: true,
         bootstrap: true,
         materialUi: true,
+        github: true,
       }
     },
     experience: {
       title: 'Experience',
-      text: 'Text for Experience',
+      text: 'I am a Junior FrontEnd Developer growth skills with Angular and ReactJS',
       items: [
         {
-          title: 'Javascript Developer',
+          title: 'FrontEnd Developer',
           company: 'Freelance',
           date: 'March 2020 - Present',
-          text: 'Text about my experience'
-        },
-        {
-          title: 'Javascript Developer',
-          company: 'Freelance',
-          date: 'March 2020 - Present',
-          text: 'Text about my experience'
+          text: 'Development of responsive (adaptive) pages, blogs, landing pages. Optimization for search engines'
         }
       ]
     },
     education: {
       title: 'Education',
-      text: 'Text for Education',
+      text: `In this section you will see a list where I studied and what licenses I have. I'm going to learn more and  expand it more`,
       items: [
         {
           title: 'Geology oil and gas',
           company: 'Ivano-Frankivsk National Technical University of Oil and Gas',
-          date: 'July 2010 - July 2010',
-          text: 'Text about my education'
+          date: 'July 2010 - July 2015',
+          text: ''
         },
         {
-          title: 'Javascript Developer',
-          company: 'Freelance',
-          date: 'March 2020 - Present',
-          text: 'Text about my experience'
+          title: 'Angular 9.Theory and Practice 2020.',
+          company: 'Udemy: Online Courses',
+          date: 'June 2020',
+          text: 'Certificate NO: UC-1c52a56c-1e26-4260-874c-696ed8eb97f2'
+        },
+        {
+          title: 'React JS. Practical Course 2020 (Hooks, Classes, Redux)',
+          company: 'Udemy: Online Courses',
+          date: 'October 2020',
+          text: 'Certificate NO: UC-1c52a56c-1e26-4260-874c-696ed8eb97f2'
         }
       ]
     },
@@ -79,10 +81,11 @@ const App: React.FC = () => {
       title: 'Portfolio',
       portfolioItems: [
         {
-          title: 'Web Blog',
-          text: 'text about Website',
-          "url_img": '../../image/website.jpg',
-          github_url: 'url',
+          title: 'Blog (Angular 9)',
+          text: 'This app was created using the Angular Bootstrap and preprocessor SASS. Firebase was used for the backend. Its my first app when I used Angular 9+',
+          url_img: '/image/blog.png',
+          github_url: 'github.com/matviiko/BlogProject',
+          website: 'https://blog-project-beta.vercel.app/',
           technology: {
             html5: true,
             css3: true,
@@ -95,18 +98,17 @@ const App: React.FC = () => {
           }
         },
         {
-          title: 'Title website',
+          title: 'Organizer',
           text: 'text about Website',
-          url_img: '',
-          github_url: 'url',
+          url_img: '/image/organizer.png',
+          github_url: 'github.com/matviiko/organizer',
+          website: 'https://organizer-seven.vercel.app',
           technology: {
             html5: true,
             css3: true,
             typescript: true,
             sass: true,
             angular: true,
-            bootstrap: true,
-            materialUi: true,
             firebase: true
           }
         }

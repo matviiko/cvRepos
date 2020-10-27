@@ -24,6 +24,7 @@ export const Experience: React.FC<IExperienceProps> = ({experience}) => {
               date={item.date}
               text={item.text} />
           })
+            .reverse()
         }
       </div>
     </div>

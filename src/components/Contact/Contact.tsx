@@ -13,7 +13,7 @@ export const Contact: React.FC = () => {
     <div id="Contact me" className="container experience">
       <div className="col-left">
         <h2 className="box-title">Contact</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aspernatur beatae doloremque facere molestiae!</p>
+        <p>Are you working on something great? I would love to help make it happen! Drop me a letter and start your project right now! Just do it.</p>
       </div>
       <form className="contact__right" onSubmit={handleSubmit(onSubmit)}>
         <div className="contact__inputs">

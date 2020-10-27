@@ -9,26 +9,25 @@ import {
   mdiReact,
   mdiSass
 } from "@mdi/js";
-import {IPortfolioItems} from "../../shared/interfaces";
+import {IPortfolioItem} from "../../shared/interfaces";
 
 export interface IModalContentProps {
   onClose(): void;
-  item: IPortfolioItems
+  item: IPortfolioItem;
 }
 
 export const ModalContent: React.FC<IModalContentProps> = ({item, onClose}) => {
-
   return (
     <div className="modal__container">
       <h2 className="box-title">{item.title}</h2>
       <p>{item.text}</p>
       <div className="modal__img">
-        <img src={"fe"} alt={item.title}/>
+        <img src={process.env.PUBLIC_URL + item.url_img} alt={item.title}/>
       </div>
       <div className="modal__description">
         <div className="description__github">
           <span className="description__title">Github: </span>
-          <span className="description__link"><a href={item.github_url}>Link</a></span>
+          <span className="description__link"><a target="_blank" rel="noopener noreferrer" href={`https://${item.github_url}`}>{item.github_url}</a></span>
         </div>
         <div className="description__technologies">
           <span className="description__title">Used technologies:</span>
@@ -47,7 +46,7 @@ export const ModalContent: React.FC<IModalContentProps> = ({item, onClose}) => {
         </div>
       </div>
       <div className="modal__btn">
-        <button className="btn btn__contact title">visit website</button>
+        <a target="_blank" rel="noopener noreferrer" href={item.website} className="btn btn__contact title">visit website</a>
         <button onClick={onClose} className="btn gray-btn title">back</button>
       </div>
     </div>

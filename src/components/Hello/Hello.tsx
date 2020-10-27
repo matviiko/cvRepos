@@ -15,7 +15,7 @@ export const Hello: React.FC<IHelloProps> = props => {
       <div className="about__content">
         <div className="about__title">
           <h1>
-            <span>I am {props.userState.lastName + " " + props.userState.firstName}</span>
+            <span>I am {props.userState.firstName + " " + props.userState.lastName}</span>
           </h1>
         </div>
         <div className="about__text">

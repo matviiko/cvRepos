@@ -36,8 +36,8 @@ export interface ISection {
     title: string;
     text?: string;
     skills?: ISkills;
-    items?: Array<ISectionItems>
-    portfolioItems?: Array<IPortfolioItems>
+    items?: Array<ISectionItem>
+    portfolioItems?: Array<IPortfolioItem>
 }
 
 export interface ISkills {
@@ -51,19 +51,21 @@ export interface ISkills {
     bootstrap?: boolean;
     materialUi?: boolean;
     firebase?: boolean;
+    github?: boolean;
 }
 
-export interface ISectionItems {
+export interface ISectionItem {
     title: string;
     company: string;
     date: string;
     text: string;
 }
 
-export interface IPortfolioItems {
+export interface IPortfolioItem {
     title: string;
     text?: string;
-    url_img?: string;
+    url_img: string;
+    website: string;
     github_url?: string;
     technology?: ISkills
 }

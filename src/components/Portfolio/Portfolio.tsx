@@ -3,7 +3,7 @@ import './Portfolio.scss';
 import {PortfolioItem} from './PortfolioItem';
 import Modal from "react-modal"
 import {ModalContent} from "./ModalContent";
-import {ISection} from "../../shared/interfaces";
+import {IPortfolioItem, ISection} from "../../shared/interfaces";
 
 export interface IPortfolioProps {
   portfolio: ISection
@@ -21,24 +21,29 @@ export const Portfolio: React.FC<IPortfolioProps> = ({portfolio}) => {
     }
   };
 
+  const [portfolioItem, setPortfolioItem] = useState<IPortfolioItem>({
+    title: 'Web Blog',
+    text: 'text about Website',
+    "url_img": '../../image/website.jpg',
+    github_url: 'url',
+    website: 'url',
+    technology: {
+      html5: true,
+      css3: true,
+      typescript: true,
+      sass: true,
+      angular: true,
+      bootstrap: true,
+      materialUi: true,
+      firebase: true
+    }
+  })
+
   const [modalIsOpen, setIsOpen] = useState<boolean>(false)
   Modal.setAppElement(':root')
 
-  // const createModalHandle = (item: IPortfolioItems) => {
-  //   console.log('create Modal')
-  //   return (<Modal
-  //     isOpen={modalIsOpen}
-  //     onRequestClose={closeModel}
-  //     style={customStyles}
-  //   >
-  //     <ModalContent
-  //       item={item}
-  //       onClose={closeModel}/>
-  //   </Modal>)
-  // }
-
-  const openModel = () => {
-    // createModalHandle(item)
+  const openModel = (item: IPortfolioItem) => {
+    setPortfolioItem(item)
     setIsOpen(true)
     document.body.classList.add('modal_open')
   }
@@ -54,23 +59,23 @@ export const Portfolio: React.FC<IPortfolioProps> = ({portfolio}) => {
       <div className="portfolio__container">
         {
           portfolio.portfolioItems?.map((item, index) => {
-            return <React.Fragment key={index}> <PortfolioItem
-
-              item={item}
-              onClick={openModel}/>
-
-            <Modal
-              isOpen={modalIsOpen}
-              onRequestClose={closeModel}
-              style={customStyles}
-            >
-              <ModalContent
-                item={item}
-                onClose={closeModel}/>
-            </Modal> </React.Fragment>
+            return <PortfolioItem
+                    key={index}
+                    item={item}
+                    onClick={() => openModel(item)}/>
           })
+            .reverse()
         }
-
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModel}
+          style={customStyles}
+        >
+          <ModalContent
+            item={portfolioItem}
+            onClose={closeModel}
+          />
+        </Modal>
       </div>
     </div>
   );

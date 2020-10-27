@@ -85,6 +85,9 @@
 .description__link {
   color: var(--success-color);
   text-decoration: underline;
+  & > a {
+    color: var(--success-color);
+  }
 }
 
 .description__github {
@@ -98,4 +101,5 @@
 
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
