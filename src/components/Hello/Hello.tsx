@@ -4,6 +4,7 @@ import logo from '../../image/business-man.jpg';
 import Icon from '@mdi/react';
 import { mdiFacebook, mdiGithub, mdiInstagram, mdiLinkedin } from '@mdi/js';
 import {IState} from "../../shared/interfaces";
+import {Link} from "react-scroll";
 
 export interface IHelloProps {
   userState: IState
@@ -75,9 +76,14 @@ export const Hello: React.FC<IHelloProps> = props => {
           </p>
         </div>
         <div className="about_btns">
-          <a href="/" className="title btn">
+          <Link to={"Contact me"}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="title btn">
             contact me
-          </a>
+          </Link>
           <a href="/" className="title btn gray-btn">
             downland cv
           </a>

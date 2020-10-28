@@ -2,11 +2,19 @@ import React from "react";
 import "./Contact.scss"
 import {useForm} from "react-hook-form";
 import {IForm} from "../../shared/interfaces";
+import emailjs from "emailjs-com"
 
 export const Contact: React.FC = () => {
-  const {register, handleSubmit} = useForm<IForm>()
-  const onSubmit = (data: IForm) => {
-    console.log(data)
+  const {register, handleSubmit, reset} = useForm<IForm>()
+  const onSubmit = async (data: IForm) => {
+    try {
+      const request = await emailjs.send('gmail', 'template_matvii', data, "user_KCdShC7lheQsfu2i7KYXr")
+      console.log(request.text);
+    } catch (e) {
+      console.log(e)
+    }
+
+    reset()
   }
 
   return (
@@ -30,7 +38,7 @@ export const Contact: React.FC = () => {
           className="contact__textarea"
           ref={register}
           name="message" placeholder="Message" />
-        <button className="title btn btn__contact" type="submit" placeholder="send message">Send message</button>
+        <button className="title btn btn__contact" type="submit">Send message</button>
       </form>
     </div>
   )

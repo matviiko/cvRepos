@@ -31,7 +31,7 @@ export const ModalContent: React.FC<IModalContentProps> = ({item, onClose}) => {
         </div>
         <div className="description__technologies">
           <span className="description__title">Used technologies:</span>
-          <div>
+          <div className="technologies__svg">
             { item.technology?.html5 ? <Icon path={mdiLanguageHtml5} size={3} color="#dc4b24" title="HTML5"/> : null}
             { item.technology?.css3 ? <Icon path={mdiLanguageCss3} size={3} color="#254add" title="CSS3"/> : null}
             { item.technology?.javascript ? <Icon path={mdiLanguageJavascript} size={3} color="#ddc71f" title="Javascript" /> : null}

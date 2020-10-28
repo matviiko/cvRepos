@@ -99,7 +99,7 @@ const App: React.FC = () => {
         },
         {
           title: 'Organizer',
-          text: 'text about Website',
+          text: 'when you need to note something. You can use organizer. in app you will see all task which you wrote',
           url_img: '/image/organizer.png',
           github_url: 'github.com/matviiko/organizer',
           website: 'https://organizer-seven.vercel.app',
