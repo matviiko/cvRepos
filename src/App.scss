@@ -30,3 +30,70 @@ body {
 .modal_open {
   overflow: hidden;
 }
+
+/* Tablets and under */
+body {
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+
+      ul {
+        li{
+          display: block;
+          margin: 8px 0;
+        }
+      }
+    }
+
+    .about {
+      grid-template-columns: 1fr;
+      margin-top: 240px;
+    }
+
+    .about__img {
+      grid-area: 1;
+    }
+
+    .skills {
+      grid-template-columns: 1fr;
+    }
+
+    .col-left {
+      padding-bottom: 10px;
+    }
+
+    .experience {
+      grid-template-columns: 1fr;
+    }
+
+    .experience__item {
+      margin-left: 0;
+
+      .item__title {
+        float: none;
+        font-size: 20px;
+      }
+
+      .item__title + span {
+        padding-left: 0;
+      }
+    }
+
+    .portfolio__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .col-right {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+/* Mobile */
+body {
+  @media (max-width: 500px) {
+    .col-right {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

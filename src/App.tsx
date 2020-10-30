@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import './App.scss';
-import {Header} from './components/Header/Header';
-import {Footer} from './components/Footer/Footer';
-import {Hello} from './components/Hello/Hello';
-import {Skills} from './components/Skills/Skills';
-import {Experience} from './components/Experience/Experience';
-import {Education} from './components/Education/Education';
-import {Portfolio} from './components/Portfolio/Portfolio';
-import {Contact} from "./components/Contact/Contact";
+import {Header} from './component/Header/Header';
+import {Footer} from './component/Footer/Footer';
+import {Hello} from './component/Hello/Hello';
+import {Skills} from './component/Skills/Skills';
+import {Experience} from './component/Experience/Experience';
+import {Education} from './component/Education/Education';
+import {Portfolio} from './component/Portfolio/Portfolio';
+import {Contact} from "./component/Contact/Contact";
 import {IState} from "./shared/interfaces";
 
 const App: React.FC = () => {
@@ -39,6 +39,7 @@ const App: React.FC = () => {
         bootstrap: true,
         materialUi: true,
         github: true,
+        ubuntu: true,
       }
     },
     experience: {

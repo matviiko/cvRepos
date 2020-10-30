@@ -52,6 +52,7 @@ export interface ISkills {
     materialUi?: boolean;
     firebase?: boolean;
     github?: boolean;
+    ubuntu?: boolean;
 }
 
 export interface ISectionItem {
