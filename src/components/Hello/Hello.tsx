@@ -7,12 +7,22 @@ import {IState} from "../../shared/interfaces";
 import {Link} from "react-scroll";
 
 export interface IHelloProps {
-  userState: IState
+  userState: IState;
+  isActive: boolean;
 }
 
 export const Hello: React.FC<IHelloProps> = props => {
+
+  const cls: Array<string> = [
+    'container', 'about'
+  ]
+
+  if(props.isActive) {
+    cls.push('nav_active')
+  }
+
   return (
-    <div id="Hello" className="container about">
+    <div id="Hello" className={cls.join(' ')}>
       <div className="about__content">
         <div className="about__title">
           <h1>

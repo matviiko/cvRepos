@@ -45,9 +45,19 @@ body {
       }
     }
 
+    .nav_active {
+      ul {
+        display: none;
+      }
+    }
+
     .about {
       grid-template-columns: 1fr;
       margin-top: 240px;
+    }
+
+    .about.nav_active {
+      margin-top: 100px;
     }
 
     .about__img {
@@ -85,6 +95,12 @@ body {
 
     .col-right {
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    .btn {
+      margin-right: 0;
+      margin-bottom: 15px;
+      width: 100%;
     }
   }
 }

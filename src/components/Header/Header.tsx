@@ -7,7 +7,11 @@ export interface IListItem {
   to?: string;
 }
 
-export const Header: React.FC = () => {
+export interface IHeaderProps {
+  isActive: boolean
+}
+
+export const Header: React.FC<IHeaderProps> = ({isActive}) => {
 
   const logo = 'Matvii'
 
@@ -20,8 +24,16 @@ export const Header: React.FC = () => {
     {label: 'Contact me'}
   ]
 
+  const cls: Array<string> = [
+    'nav'
+  ];
+
+  if(isActive) {
+    cls.push('nav_active')
+  }
+
   return (
-    <nav className="nav">
+    <nav className={cls.join(' ')}>
       <div className="logo">
         <span>
             {logo}
