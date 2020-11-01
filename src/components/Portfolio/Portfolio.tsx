@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Portfolio.scss';
-import {PortfolioItem} from './PortfolioItem';
-import Modal from "react-modal"
-import {ModalContent} from "./ModalContent";
-import {IPortfolioItem, ISection} from "../../shared/interfaces";
+import { PortfolioItem } from './PortfolioItem';
+import Modal from 'react-modal';
+import { ModalContent } from './ModalContent';
+import { IPortfolioItem, ISection } from '../../shared/interfaces';
 
 export interface IPortfolioProps {
-  portfolio: ISection
+  portfolio: ISection;
 }
 
-export const Portfolio: React.FC<IPortfolioProps> = ({portfolio}) => {
+export const Portfolio: React.FC<IPortfolioProps> = ({ portfolio }) => {
   const customStyles = {
     overlay: {
       background: 'rgba(0, 0, 0, 0.5)',
@@ -18,13 +18,13 @@ export const Portfolio: React.FC<IPortfolioProps> = ({portfolio}) => {
       left: '40px',
       right: '40px',
       padding: '30px',
-    }
+    },
   };
 
   const [portfolioItem, setPortfolioItem] = useState<IPortfolioItem>({
     title: 'Web Blog',
     text: 'text about Website',
-    "url_img": '../../image/website.jpg',
+    url_img: '../../image/website.jpg',
     github_url: 'url',
     website: 'url',
     technology: {
@@ -35,46 +35,45 @@ export const Portfolio: React.FC<IPortfolioProps> = ({portfolio}) => {
       angular: true,
       bootstrap: true,
       materialUi: true,
-      firebase: true
-    }
-  })
+      firebase: true,
+    },
+  });
 
-  const [modalIsOpen, setIsOpen] = useState<boolean>(false)
-  Modal.setAppElement(':root')
+  const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+  Modal.setAppElement(':root');
 
   const openModel = (item: IPortfolioItem) => {
-    setPortfolioItem(item)
-    setIsOpen(true)
-    document.body.classList.add('modal_open')
-  }
+    setPortfolioItem(item);
+    setIsOpen(prev => !prev);
+    document.body.classList.add('modal_open');
+  };
 
   const closeModel = () => {
-    setIsOpen(false)
-    document.body.classList.remove('modal_open')
-  }
+    setIsOpen(prev => !prev);
+    document.body.classList.remove('modal_open');
+  };
 
   return (
     <div id="Portfolio" className="container m15">
       <h2 className="box-title">{portfolio.title}</h2>
       <div className="portfolio__container">
-        {
-          portfolio.portfolioItems?.map((item, index) => {
-            return <PortfolioItem
-                    key={index}
-                    item={item}
-                    onClick={() => openModel(item)}/>
+        {portfolio.portfolioItems
+          ?.map((item, index) => {
+            return (
+              <PortfolioItem
+                key={index}
+                item={item}
+                onClick={() => openModel(item)}
+              />
+            );
           })
-            .reverse()
-        }
+          .reverse()}
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModel}
           style={customStyles}
         >
-          <ModalContent
-            item={portfolioItem}
-            onClose={closeModel}
-          />
+          <ModalContent item={portfolioItem} onClose={closeModel} />
         </Modal>
       </div>
     </div>

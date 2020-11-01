@@ -1,20 +1,22 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './App.scss';
-import {Header} from './components/Header/Header';
-import {Footer} from './components/Footer/Footer';
-import {Hello} from './components/Hello/Hello';
-import {Skills} from './components/Skills/Skills';
-import {Experience} from './components/Experience/Experience';
-import {Education} from './components/Education/Education';
-import {Portfolio} from './components/Portfolio/Portfolio';
-import {Contact} from "./components/Contact/Contact";
-import {IState} from "./shared/interfaces";
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
+import { Hello } from './components/Hello/Hello';
+import { Skills } from './components/Skills/Skills';
+import { Experience } from './components/Experience/Experience';
+import { Education } from './components/Education/Education';
+import { Portfolio } from './components/Portfolio/Portfolio';
+import { Contact } from './components/Contact/Contact';
+import { IState } from './shared/interfaces';
+import throttle from 'lodash/throttle';
 
 const App: React.FC = () => {
   // eslint-disable-next-line
   const [userState, setUserState] = useState<IState>({
     firstName: 'Matvii',
-    text: 'Hello, my name is Matvii, I am 28, I am a Frontend developer, I like to create new and interesting apps. My goal is to become a high-level Frontend developer in this area. I would like to improve my skills in Angular and React JS . At the moment I work as a freelancer. I am looking for a reputable where I would get a chance to develop my skills through getting interesting and challenging tasks. I am a team player, thus I would love to join a team of the same-minded colleagues.',
+    text:
+      'Hello, my name is Matvii, I am 28, I am a Frontend developer, I like to create new and interesting apps. My goal is to become a high-level Frontend developer in this area. I would like to improve my skills in Angular and React JS . At the moment I work as a freelancer. I am looking for a reputable where I would get a chance to develop my skills through getting interesting and challenging tasks. I am a team player, thus I would love to join a team of the same-minded colleagues.',
     lastName: 'Kopchak',
     phone: '+380964960758',
     email: 'matviy.kopchak@gmail.com',
@@ -27,7 +29,8 @@ const App: React.FC = () => {
     },
     skills: {
       title: 'Skills',
-      text: 'In this part you can see what skills I have. Every day I try to develop and improve them.',
+      text:
+        'In this part you can see what skills I have. Every day I try to develop and improve them.',
       skills: {
         html5: true,
         css3: true,
@@ -40,19 +43,21 @@ const App: React.FC = () => {
         materialUi: true,
         github: true,
         ubuntu: true,
-      }
+      },
     },
     experience: {
       title: 'Experience',
-      text: 'I am a Junior FrontEnd Developer growth skills with Angular and ReactJS',
+      text:
+        'I am a Junior FrontEnd Developer growth skills with Angular and ReactJS',
       items: [
         {
           title: 'FrontEnd Developer',
           company: 'Freelance',
           date: 'March 2020 - Present',
-          text: 'Development of responsive (adaptive) pages, blogs, landing pages. Optimization for search engines'
-        }
-      ]
+          text:
+            'Development of responsive (adaptive) pages, blogs, landing pages. Optimization for search engines',
+        },
+      ],
     },
     education: {
       title: 'Education',
@@ -60,30 +65,32 @@ const App: React.FC = () => {
       items: [
         {
           title: 'Geology oil and gas',
-          company: 'Ivano-Frankivsk National Technical University of Oil and Gas',
+          company:
+            'Ivano-Frankivsk National Technical University of Oil and Gas',
           date: 'July 2010 - July 2015',
-          text: ''
+          text: '',
         },
         {
-          title: 'Angular 9.Theory and Practice 2020.',
+          title: 'Angular 9.Theory and Practice 2020',
           company: 'Udemy: Online Courses',
           date: 'June 2020',
-          text: 'Certificate NO: UC-1c52a56c-1e26-4260-874c-696ed8eb97f2'
+          text: 'Certificate NO: UC-1c52a56c-1e26-4260-874c-696ed8eb97f2',
         },
         {
           title: 'React JS. Practical Course 2020 (Hooks, Classes, Redux)',
           company: 'Udemy: Online Courses',
           date: 'October 2020',
-          text: 'Certificate NO: UC-1c52a56c-1e26-4260-874c-696ed8eb97f2'
-        }
-      ]
+          text: 'Certificate NO: UC-1c52a56c-1e26-4260-874c-696ed8eb97f2',
+        },
+      ],
     },
     portfolio: {
       title: 'Portfolio',
       portfolioItems: [
         {
           title: 'Blog (Angular 9)',
-          text: 'This app was created using the Angular Bootstrap and preprocessor SASS. Firebase was used for the backend. Its my first app when I used Angular 9+',
+          text:
+            'This app was created using the Angular Bootstrap and preprocessor SASS. Firebase was used for the backend. Its my first app when I used Angular 9+',
           url_img: '/image/blog.png',
           github_url: 'github.com/matviiko/BlogProject',
           website: 'https://blog-project-beta.vercel.app/',
@@ -95,12 +102,13 @@ const App: React.FC = () => {
             angular: true,
             bootstrap: true,
             materialUi: true,
-            firebase: true
-          }
+            firebase: true,
+          },
         },
         {
           title: 'Organizer',
-          text: 'when you need to note something. You can use organizer. in app you will see all task which you wrote',
+          text:
+            'when you need to note something. You can use organizer. in app you will see all task which you wrote',
           url_img: '/image/organizer.png',
           github_url: 'github.com/matviiko/organizer',
           website: 'https://organizer-seven.vercel.app',
@@ -110,43 +118,46 @@ const App: React.FC = () => {
             typescript: true,
             sass: true,
             angular: true,
-            firebase: true
-          }
-        }
-      ]
-    }
+            firebase: true,
+          },
+        },
+      ],
+    },
   });
 
   const [isActive, setIsActive] = useState<boolean>(false);
 
-  const onScrollHandler = useCallback( () => {
-    const lastScrollY = window.scrollY;
-    const topRetreat = 5;
+  const onScrollHandler = useCallback(
+    throttle(() => {
+      const lastScrollY = window.scrollY;
+      const topRetreat = 5;
 
-    if (lastScrollY >= topRetreat) {
-      setIsActive(true);
-    } else {
-      setIsActive(false)
-    }
-  }, [])
+      if (lastScrollY >= topRetreat) {
+        setIsActive(true);
+      } else {
+        setIsActive(false);
+      }
+    }, 200),
+    []
+  );
 
   useEffect(() => {
-    window.addEventListener("scroll", onScrollHandler);
+    window.addEventListener('scroll', onScrollHandler);
     return () => {
-      window.removeEventListener("scroll", onScrollHandler)
+      window.removeEventListener('scroll', onScrollHandler);
     };
-  }, [onScrollHandler])
+  }, [onScrollHandler]);
 
   return (
     <React.Fragment>
-      <Header isActive={isActive}/>
-      <Hello userState={userState} isActive={isActive}/>
-      <Skills skills={userState.skills}/>
-      <Experience experience={userState.experience}/>
-      <Education education={userState.education}/>
-      <Portfolio portfolio={userState.portfolio}/>
-      <Contact/>
-      <Footer/>
+      <Header isActive={isActive} />
+      <Hello userState={userState} isActive={isActive} />
+      <Skills skills={userState.skills} />
+      <Experience experience={userState.experience} />
+      <Education education={userState.education} />
+      <Portfolio portfolio={userState.portfolio} />
+      <Contact />
+      <Footer />
     </React.Fragment>
   );
 };

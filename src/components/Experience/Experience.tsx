@@ -1,13 +1,13 @@
 import React from 'react';
 import './Experience.scss';
-import {ExperienceItem} from './ExperienceItem';
-import {ISection} from "../../shared/interfaces";
+import { ExperienceItem } from './ExperienceItem';
+import { ISection } from '../../shared/interfaces';
 
 export interface IExperienceProps {
-  experience: ISection
+  experience: ISection;
 }
 
-export const Experience: React.FC<IExperienceProps> = ({experience}) => {
+export const Experience: React.FC<IExperienceProps> = ({ experience }) => {
   return (
     <div id="Experience" className="container experience">
       <div className="col-left">
@@ -15,17 +15,19 @@ export const Experience: React.FC<IExperienceProps> = ({experience}) => {
         <p>{experience.text}</p>
       </div>
       <div className="col-left">
-        {
-          experience.items?.map((item, index) => {
-            return <ExperienceItem
-              key={index}
-              title={item.title}
-              company={item.company}
-              date={item.date}
-              text={item.text} />
+        {experience.items
+          ?.map((item, index) => {
+            return (
+              <ExperienceItem
+                key={index}
+                title={item.title}
+                company={item.company}
+                date={item.date}
+                text={item.text}
+              />
+            );
           })
-            .reverse()
-        }
+          .reverse()}
       </div>
     </div>
   );

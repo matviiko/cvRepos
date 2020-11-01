@@ -1,10 +1,10 @@
 import React from 'react';
 import './Hello.scss';
-import logo from '../../image/business-man.jpg';
+import matvii from '../../image/matvii_kopchak.png';
 import Icon from '@mdi/react';
 import { mdiFacebook, mdiGithub, mdiInstagram, mdiLinkedin } from '@mdi/js';
-import {IState} from "../../shared/interfaces";
-import {Link} from "react-scroll";
+import { IState } from '../../shared/interfaces';
+import { Link } from 'react-scroll';
 
 export interface IHelloProps {
   userState: IState;
@@ -12,13 +12,10 @@ export interface IHelloProps {
 }
 
 export const Hello: React.FC<IHelloProps> = props => {
+  const cls: Array<string> = ['container', 'about'];
 
-  const cls: Array<string> = [
-    'container', 'about'
-  ]
-
-  if(props.isActive) {
-    cls.push('nav_active')
+  if (props.isActive) {
+    cls.push('nav_active');
   }
 
   return (
@@ -26,13 +23,13 @@ export const Hello: React.FC<IHelloProps> = props => {
       <div className="about__content">
         <div className="about__title">
           <h1>
-            <span>I am {props.userState.firstName + " " + props.userState.lastName}</span>
+            <span>
+              I am {props.userState.firstName + ' ' + props.userState.lastName}
+            </span>
           </h1>
         </div>
         <div className="about__text">
-          <p>
-            {props.userState.text}
-          </p>
+          <p>{props.userState.text}</p>
         </div>
         <div className="about__info">
           <p>
@@ -86,21 +83,30 @@ export const Hello: React.FC<IHelloProps> = props => {
           </p>
         </div>
         <div className="about_btns">
-          <Link to={"Contact me"}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className="title btn">
+          <Link
+            to={'Contact me'}
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="title btn"
+          >
             contact me
           </Link>
-          <a href="/" className="title btn gray-btn">
+          <a
+            href={
+              'https://drive.google.com/file/d/1WTDWB77FlaAUuzRaOrH0lZz8CXwQgUsC/view?usp=sharing'
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="title btn gray-btn"
+          >
             downland cv
           </a>
         </div>
       </div>
       <div className="about__img">
-        <img src={logo} alt={logo} />
+        <img src={matvii} alt={props.userState.firstName} />
       </div>
     </div>
   );
