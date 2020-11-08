@@ -106,6 +106,21 @@ body {
     .btn__contact {
       width: 100%;
     }
+
+    .modal__container {
+      display: block;
+
+      .modal__btn {
+        flex-direction: column;
+
+        .btn__contact {
+          width: calc(100% - 30px);
+        }
+        .gray-btn {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -114,6 +129,11 @@ body {
   @media (max-width: 500px) {
     .col-right {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 }
