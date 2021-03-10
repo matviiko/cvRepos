@@ -40,10 +40,17 @@ const stateMain: IState = {
      {
        title: 'FrontEnd Developer',
        company: 'Freelance',
-       date: 'March 2020 - Present',
+       date: 'March 2020 - December 2020',
        text:
          'Development of responsive (adaptive) pages, blogs, landing pages. Optimization for search engines',
      },
+     {
+       title: 'FrontEnd Developer',
+       company: 'ETIYA',
+       date: 'March 2021 - Present',
+       text:
+           'Working with interesting project.',
+     }
    ],
  },
  education: {
